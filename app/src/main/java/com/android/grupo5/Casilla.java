@@ -16,6 +16,13 @@ public class Casilla {
         this.valor = valor;
     }
 
+    public void incrementarValor(int valorMax){
+        if (this.valor<valorMax)
+            this.valor++;
+        else
+            this.valor=1;
+    }
+
     public int getX() {
         return x;
     }
