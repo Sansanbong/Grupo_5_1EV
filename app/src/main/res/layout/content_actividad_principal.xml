@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.sanch.grupo_5_1ev.ActividadPrincipal"
+    tools:context="com.example.sanch.grupo_5_1ev.com.android.grupo5.ActividadPrincipal"
     tools:showIn="@layout/app_bar_actividad_principal">
 
     <TextView
