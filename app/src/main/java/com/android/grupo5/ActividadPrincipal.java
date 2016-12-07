@@ -3,6 +3,8 @@ package com.android.grupo5;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.text.Layout;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.example.sanch.grupo_5_1ev.R;
 
@@ -42,6 +46,24 @@ public class ActividadPrincipal extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Configuracion config=new Configuracion(3, 4, 4, 100);
+        Juego juego=new Juego(config);
+
+        RelativeLayout layout=(RelativeLayout)findViewById(R.id.content_actividad_principal);
+        int i=0;
+        for (Casilla item: juego.getCasillas()){
+            Log.i("Coordenadas("+item.getX()+","+item.getY()+")", ""+item.getValor());
+        }
+
+        for (Casilla item: juego.getCasillas()){
+            if (item.getX()==4 && item.getY()==4)
+                juego.pulsarCasilla(item);
+        }
+        Log.i("---------", "---------");
+        for (Casilla item: juego.getCasillas()){
+            Log.i("Coordenadas("+item.getX()+","+item.getY()+")", ""+item.getValor());
+        }
     }
 
     @Override
